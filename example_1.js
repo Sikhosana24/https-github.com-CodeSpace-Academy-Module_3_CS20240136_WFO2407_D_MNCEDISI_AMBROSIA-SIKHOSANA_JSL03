@@ -7,15 +7,20 @@ function cookSteak(steakWeight, desiredDoneness) {
     
     // Step 2: Season the steak
     const seasoning = 'Salt and Pepper';
+    console.log(`seasoning the steak with ${seasoning}.`)
     // Apply seasoning to both sides of the steak
     
     // Step 3: Cook the steak
     while (steakTemperature < desiredDoneness) {
+      console.log(`Grilling... Current steak temperature: ${steakTemperature}°C`);
       // Grill the steak and measure internal temperature
       // Adjust grill temperature and cooking time based on steakWeight and desiredDoneness
       // Update steakTemperature
-      
+      steakTemperature += (grillTemperature / steakWeight) * 0.1;
       // If the steak is done, break out of the loop
+      if (steakTemperature >= desiredDoneness) {
+        break;
+      }
     }
     
     // Step 4: Serve the steak
