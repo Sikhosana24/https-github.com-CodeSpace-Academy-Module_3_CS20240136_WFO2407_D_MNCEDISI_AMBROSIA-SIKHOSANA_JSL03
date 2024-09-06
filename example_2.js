@@ -6,7 +6,7 @@ function cookSteak(steakWeight, desiredDoneness) {
     const cookingProcess = [
       { action: 'Preheat grill', temperature: grillTemperatureCelsius },
       { action: 'Season steak', seasoning },
-      { action: 'Cook steak until desired doneness', desiredDoneness },
+      { action: 'Cook steak until desired doneness' },
       { action: 'Serve steak' }
     ];
   
@@ -20,7 +20,7 @@ function cookSteak(steakWeight, desiredDoneness) {
           console.log(`Seasoning the steak with ${step.seasoning}`);
           break;
         case 'Cook steak until desired doneness':
-          console.log(`Cooking steak to ${step.desiredDoneness}°C`); // Display temperature in Celsius
+          console.log(`Cooking steak to ${desiredDoneness}°C`); // Correctly reference desiredDoneness
           break;
         case 'Serve steak':
           console.log('Steak is ready to serve!');
@@ -29,7 +29,6 @@ function cookSteak(steakWeight, desiredDoneness) {
           console.log('Invalid step in the cooking process.');
       }
     }
-  }
+}
   
-  cookSteak(16, 63); // Cook a 16 oz steak to medium-rare (63°C)
-  
+cookSteak(16, 63); // Cook a 16 oz steak to medium-rare (63°C)
